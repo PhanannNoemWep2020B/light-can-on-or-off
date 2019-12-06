@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="imageOn()">turn on light</button>
+    <img id="image" src="pic_bulboff.gif" alt="pic_bulboff">
+    <button onclick="imageOff()">turn off light</button>
+
+    <button onclick="turn()" id="btnChange">on & off</button>
+</html>
+<script>
+    // turn on and off have button 
+    function imageOn(){
+        document.getElementById('image').src = 'pic_bulbon.gif'
+    }
+    function imageOff(){
+        document.getElementById('image').src = 'pic_bulboff.gif'
+    }
+
+    // turn on and off have only one button
+    var state = true;
+    function turn(){
+        if(state == true){
+            document.getElementById('image').src = 'pic_bulbon.gif';
+            document.getElementById('btnChange').innerHTML="Turn Off";
+            state = false
+        }else{
+            document.getElementById('btnChange').innerHTML="Turn On";
+            document.getElementById('image').src = 'pic_bulboff.gif';
+            state = true
+        }
+        // state = !state
+    }
+</script>
